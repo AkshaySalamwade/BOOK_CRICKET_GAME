@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book Cricket</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <style>
+     .divplayer1, .divplayer2 {
+      height: 400px; /* Set the desired height */
+      color: white; /* Add text coloGIr for better visibility */
+      padding: 10px; /* Add some padding for better appearance */
+      border: 2px solid black;
+    }
+
+    .insideblock{
+      height: 200px;
+      padding-left: 15px;
+    }
+    
+    .imgblock1{
+
+      height: 150px;
+      width: 120px;
+      background-color: tomato;
+      margin: 10px;
+
+
+    }
+    .textBox1{
+      height: 150px;
+      width: 430px;
+      background-color: aqua;
+      margin: 10px;
+    }
+
+    .textstyle{
+
+      font-size: 30px;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      text-shadow: 0cqmax;
+      color: rgb(53, 107, 6);
+      text-decoration: solid;
+
+    } 
+
+    </style>
+
+
+
+</head>
+<body>
+  
+    <!-- Image and text -->
+<nav class="navbar navbar-light bg-light bg-dark">
+    <a class="navbar-brand text-light" href="#">
+      <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top " alt="">
+      BOOK CRICKET
+    </a>
+  </nav>
+  
+   <div class="row bg-primary">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 p-3"><center><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><b>START</b></button></center></div>
+    <div class="col-sm-4"></div>
+   </div> 
+   
+
+    <!-- <p>
+        <label>Book Size :</label>
+        <input type="number" id="bookSize" placeholder="Enter Book Size">
+        <label>Total Wickets :</label>
+        <input type="number" id="totalWickets" placeholder="Enter Total Wickets">
+    </p> -->
+
+   
+    <div class="row">
+            <div class="col-sm-5 bg-secondary mt-4 divplayer1"> 
+              <div class="row bg-black insideblock">
+                <div class="imgblock1"></div>
+                <div class="textBox1 ">
+                  <label class="textstyle">Total Players : </label> <label class="textstyle" id="tPlayer">0</label> <br>
+                  
+                  <label class="textstyle">Book Size : </label> <label class="textstyle" id="bSize">0</label> <br>
+
+                  <label class="textstyle">Total Score : </label> <label>Book Size : </label>
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-5 bg-danger mt-4 divplayer2">
+
+              <div class="row bg-black insideblock">
+                <div class="imgblock1"></div>
+
+                <div class="textBox1 ">
+                  <label class="textstyle">Total Players : </label> <label class="textstyle">0</label> <br>
+                  
+                  <label class="textstyle">Book Size : </label> <label class="textstyle">0</label> <br>
+
+                  <label class="textstyle">Total Score : </label> <label>Book Size : </label>
+
+                </div>
+
+              </div>
+
+              </div>
+
+            </div>
+
+    </div>
+  
+
+    <button id="playBtn1">   Player 1 !</button>
+    <button id="playBtn2"> Player 2 !</button>
+    <button id="newMatchBtn"> New Match !!</button>
+
+  <!-- Modal  -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Form for bookSize and totalWickets -->
+          <form id="myForm">
+            <div class="form-group">
+              <label for="bookSize">Book Size :</label>
+              <input type="number" class="form-control" id="bookSize" placeholder="Enter Book Size" required>
+            </div>
+            <div class="form-group">
+              <label for="totalWickets">Total Wickets :</label>
+              <input type="number" class="form-control" id="totalWickets" placeholder="Enter Total Wickets" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+    <script src="mainJS.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Handle form submission
+    $("#myForm").submit(function(event) {
+      // Prevent the default form submission
+      event.preventDefault();
+
+      // Get values from input fields
+      var bookSize = $("#bookSize").val();
+      var totalWickets = $("#totalWickets").val();
+
+     alert(bookSize);
+     alert(totalWickets);
+
+     document.getElementById('tPlayer').innerHTML=totalWickets;
+     document.getElementById('bSize').innerHTML=bookSize;
+
+      // Store values in script (you can perform any desired actions here)
+      console.log("Book Size:", bookSize);
+      console.log("Total Wickets:", totalWickets);
+
+      // Close the modal
+      $("#exampleModal").modal("hide");
+    });
+  });
+</script>
+</body>
+</html>
