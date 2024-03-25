@@ -2,6 +2,7 @@ let totalScore = 0;
 let totalScorePlayer1 = 0;
 let totalScorePlayer2 = 0;
 let playerWickets = 0;
+let currentScore = 0;
 
 let playerWin = function () {
   if (totalScorePlayer1 > totalScorePlayer2) {
